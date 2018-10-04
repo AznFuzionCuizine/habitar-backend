@@ -10,4 +10,23 @@ class HabitsController < ApplicationController
     render json: habit
   end
 
+  def create
+    habit=Habit.create(habit_params)
+    render json:habit
+  end
+
+  def update
+    habit=Habit.find_by(id: params[:id])
+    habit.update(habit_params)
+    render json:habit 
+  end
+
+  def destroy
+    habit = Habit.find_by(id: params[:id]).destroy
+    render json: habit
+  end
+
+  def habit_params
+    params.require(:habit).permit(:user_id,:habit_name,:child,:streak_count,:habitar,:reward,:completed,:habit_description,:reminder_time)
+  end
 end
