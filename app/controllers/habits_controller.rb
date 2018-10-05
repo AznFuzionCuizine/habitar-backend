@@ -1,5 +1,4 @@
 class HabitsController < ApplicationController
-
   def index
     habits = Habit.where(user_id: params[:user_id]).limit(nil)
     render json: habits
@@ -11,14 +10,18 @@ class HabitsController < ApplicationController
   end
 
   def create
-    habit=Habit.create(habit_params)
-    render json:habit
+    puts '=======params '
+    puts request.body.read
+    puts habit_params
+    habit = Habit.create(habit_params)
+
+    render json: habit
   end
 
   def update
-    habit=Habit.find_by(id: params[:id])
+    habit = Habit.find_by(id: params[:id])
     habit.update(habit_params)
-    render json:habit 
+    render json:habit
   end
 
   def destroy
@@ -27,6 +30,6 @@ class HabitsController < ApplicationController
   end
 
   def habit_params
-    params.require(:habit).permit(:user_id,:habit_name,:child,:streak_count,:habitar,:reward,:completed,:habit_description,:reminder_time)
+    params.require(:habit).permit(:user_id,:habit_name,:child,:streak_count,:habitar,:reward,:habit_description,:reminder_time,:completed)
   end
 end
