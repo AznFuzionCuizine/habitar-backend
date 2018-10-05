@@ -10,11 +10,7 @@ class HabitsController < ApplicationController
   end
 
   def create
-    puts '=======params '
-    puts request.body.read
-    puts habit_params
     habit = Habit.create(habit_params)
-
     render json: habit
   end
 
