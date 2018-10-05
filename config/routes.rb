@@ -7,7 +7,8 @@ resources :users do
 end
 
 get '/habits/' => 'habits#all'
-get '/users/:user_id/habits' => 'habits#index'
-# post '/users/' => 'users#create'
+# get '/users/:user_id/habits' => 'habits#index'
+# post '/users/:user_id/habits' => 'habits#create'
+
 
 end
