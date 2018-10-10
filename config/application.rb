@@ -17,6 +17,11 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+Dotenv::Railtie.load
+
+account_sid = ENV['SID']
+auth_token = ENV['AUTH_TOKEN']
+
 module HabitarBackend
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
