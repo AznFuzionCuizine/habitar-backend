@@ -21,3 +21,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+sendgrid.env
+
+# We want our environment variables not to be public info on Git
+.env
