@@ -19,6 +19,7 @@ class HabitsController < ApplicationController
       message = "Hello from Habitar! You opted in for reminders on your habit. Don't forget to #{habit.habit_name} with #{habit.child} at #{habit.reminder_time.strftime('%l:%M %p')}."
       phone = "+1#{habit.phone}"
       TwilioTextMessenger.new(message, phone).call
+      return message
     end
   end
 

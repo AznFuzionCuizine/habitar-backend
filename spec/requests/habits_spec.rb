@@ -33,6 +33,13 @@ describe "Habits API" do
       json=JSON.parse(response.body)
       expect(json.length).to eq 3
   end
+  # it "can opt in to recieve a text" do
+  #   testparams= {"habit":{"user_id":"1","habit_name":"something habit","child":"something child","streak_count":0,"habitar":0,"reward":"something cool","completed":false,"habit_description":"something something","reminder_time":"2000-01-01T08:30:00.000Z","opt_in":true,"phone":9492912504}}
+
+  #   post '/users/1/habits', :params=>testparams
+  #   open_last_text_message_for "949-291-2504"
+  #   current_text_message.should have_body "Hello from Habitar! You opted in for reminders on your habit. Don't forget to something habit with something child at 8:30 AM."
+  # end
   it "can edit a habit" do
       testparams= {"habit":{"user_id":"1","habit_name":"something habit","child":"something child","streak_count":0,"habitar":0,"reward":"something cool","completed":false,"habit_description":"something something","reminder_time":"2000-01-01T08:30:00.000Z"}}
 
