@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_02_190048) do
+ActiveRecord::Schema.define(version: 2018_10_10_161414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2018_10_02_190048) do
     t.boolean "completed"
     t.text "habit_description"
     t.time "reminder_time"
+    t.integer "phone"
+    t.boolean "opt_in"
     t.index ["user_id"], name: "index_habits_on_user_id"
   end
 

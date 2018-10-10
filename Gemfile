@@ -47,3 +47,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails', groups: [:development, :tests]
 gem 'devise-jwt' , '~>0.5.6'
 gem 'twilio-ruby'
+gem 'rufus-scheduler'
