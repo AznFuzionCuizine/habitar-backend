@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_10_10_161414) do
     t.boolean "completed"
     t.text "habit_description"
     t.time "reminder_time"
-    t.integer "phone"
+    t.text "phone"
     t.boolean "opt_in"
     t.index ["user_id"], name: "index_habits_on_user_id"
   end
