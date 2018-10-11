@@ -1,4 +1,5 @@
 class HabitsController < ApplicationController
+	
   def index
     habits = Habit.where(user_id: params[:user_id]).limit(nil)
     render json: habits
@@ -18,24 +19,10 @@ class HabitsController < ApplicationController
 
       message = "Hello from Habitar! You opted in for reminders on your habit. Don't forget to #{habit.habit_name} with #{habit.child} at #{habit.reminder_time.strftime('%l:%M %p')}."
       phone = "+1#{habit.phone}"
+
       TwilioTextMessenger.new(message, phone).call
     end
   end
-
-  # def text
-  #   puts ENV['SID']
-  #   puts ENV['AUTH_TOKEN']
-  #
-  #   message = "Hello! Newest test from Twilio"
-  #   phone = "+19492912504"
-  #
-  #   # params that will be passed is habit id
-  #   # user param to find user by user_id (Habit.find(user_id))
-  #   # message = "You have created a new habit: #{Habit.last}. We'll send you reminders at #{Habit.last.reminder_time}"
-  #
-  #   TwilioTextMessenger.new(message, phone).call
-  # end
-
 
   def update
     habit = Habit.find_by(id: params[:id])
