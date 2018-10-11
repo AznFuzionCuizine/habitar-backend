@@ -1,5 +1,5 @@
 class HabitsController < ApplicationController
-	
+
   def index
     habits = Habit.where(user_id: params[:user_id]).limit(nil)
     render json: habits
@@ -7,17 +7,21 @@ class HabitsController < ApplicationController
 
   def show
     habit = Habit.find_by(id: params[:id])
+	puts params[:id]
+	puts habit
     render json: habit
   end
 
   def create
     habit = Habit.create(habit_params)
     render json: habit
+
     if habit.opt_in == true && habit.phone != nil
       puts ENV['SID']
       puts ENV['AUTH_TOKEN']
 
-      message = "Hello from Habitar! You opted in for reminders on your habit. Don't forget to #{habit.habit_name} with #{habit.child} at #{habit.reminder_time.strftime('%l:%M %p')}."
+      message = "Hello from Habitar! You opted in for reminders for your habit. Don't forget to help #{habit.child} with #{habit.habit_name} at #{habit.reminder_time.strftime('%l:%M %p')}."
+
       phone = "+1#{habit.phone}"
 
       TwilioTextMessenger.new(message, phone).call
@@ -28,6 +32,17 @@ class HabitsController < ApplicationController
     habit = Habit.find_by(id: params[:id])
     habit.update(habit_params)
     render json:habit
+
+	if habit.opt_in == true && habit.phone != nil
+      puts ENV['SID']
+      puts ENV['AUTH_TOKEN']
+
+	  message = "Hello from Habitar! You opted in for reminders for your habit. Don't forget to help #{habit.child} with #{habit.habit_name}. The new time for this habit is at #{habit.reminder_time.strftime('%l:%M %p')}."
+
+      phone = "+1#{habit.phone}"
+
+      TwilioTextMessenger.new(message, phone).call
+	  end
   end
 
   def destroy
