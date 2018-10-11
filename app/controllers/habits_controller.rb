@@ -32,17 +32,6 @@ class HabitsController < ApplicationController
     habit = Habit.find_by(id: params[:id])
     habit.update(habit_params)
     render json:habit
-
-	if habit.opt_in == true && habit.phone != nil
-      puts ENV['SID']
-      puts ENV['AUTH_TOKEN']
-
-	  message = "Hello from Habitar! You opted in for reminders for your habit. Don't forget to help #{habit.child} with #{habit.habit_name}. The new time for this habit is at #{habit.reminder_time.strftime('%l:%M %p')}."
-
-      phone = "+1#{habit.phone}"
-
-      TwilioTextMessenger.new(message, phone).call
-	  end
   end
 
   def destroy
