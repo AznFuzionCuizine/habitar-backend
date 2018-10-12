@@ -31,7 +31,6 @@ gem 'rack-cors'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'dotenv-rails'
 end
 
 group :development do
@@ -46,6 +45,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails', groups: [:development, :tests]
 gem 'devise-jwt' , '~>0.5.6'
+gem 'dotenv-rails', '~>2.2.1'
 gem 'twilio-ruby'
 gem 'rufus-scheduler'
 gem 'whenever'
