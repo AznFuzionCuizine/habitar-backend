@@ -25,6 +25,7 @@ class HabitsController < ApplicationController
       phone = "+1#{habit.phone}"
 
       TwilioTextMessenger.new(message, phone).call
+      return message
     end
   end
 

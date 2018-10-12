@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: habitar-backend_production
-  username: habitar-backend
-  password: <%= ENV['HABITAR-BACKEND_DATABASE_PASSWORD'] %>
+  database: d3k5kaehu6rbdg
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
