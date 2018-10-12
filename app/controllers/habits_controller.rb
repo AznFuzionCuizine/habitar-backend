@@ -41,7 +41,7 @@ class HabitsController < ApplicationController
   end
 
   def habit_params
-    params.require(:habit).permit(:user_id,:habit_name,:child,:streak_count,:habitar,:reward,:habit_description,:reminder_time,:completed,:phone,:opt_in)
+    params.require(:habit).permit(:user_id,:habit_name,:child,:streak_count,:habitar,:reward,:habit_description,:reminder_time,:completed,:phone,:opt_in, :power_streak,:power_reward)
   end
 
   private
