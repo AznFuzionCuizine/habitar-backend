@@ -80,7 +80,7 @@ Create and Edit Habit requests should be made in the format:
   }
 }
 ```
-* Create Habit
+* Create Habits
 POST to `<hostname>/users/:user_id/habits`
 * Edit Habit
 PATCH to `<hostname>/users/:user_id/habits/:habit_id`
