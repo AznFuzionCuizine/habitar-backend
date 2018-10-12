@@ -1,11 +1,11 @@
 # Habitar
-Hatching good habits. Create habits and track them, and if you keep it up, you may even get a reward.
+Hatching good habits. Create habits, track them, and if you keep it up you may even get a reward
 
-This is the backend API for our decoupled app, to view it in action, [try it](http://habitar-backend.herokuapp.com) on Heroku
+This is the backend API for our decoupled app, to view it in action: [try it on Heroku](http://habitar-backend.herokuapp.com)
 
-For the front end, visit [Habitar-Frontend](https://github.com/habitar/habitar-frontend)
+For the front end, visit: [Habitar-Frontend](https://github.com/habitar/habitar-frontend)
 
-Written with Ruby on Rails, using devise for authentication and twilio for SMS notifications
+Written with Ruby on Rails, using devise for authentication, and Twilio for SMS notifications
 
 ## Installation
 ### Prerequisites
@@ -13,29 +13,29 @@ Written with Ruby on Rails, using devise for authentication and twilio for SMS n
 * Rails version: **5.2.1**
 
 # Installation
-Make sure you have the correct version of Ruby (2.5.1)
+Make sure you have the correct version of Ruby (2.5.1):
 ```
 ruby -v
 ```
-If you need to update, use a ruby version management solution to install the correct version (example given for rvm, rbenv is fairly similar)
+If you need to update, use a ruby version management solution to install the correct version (example given for rvm, rbenv is fairly similar):
 ```
 rvm install 2.5.1
 rvm use 2.5.1
 ```
-Install the latest version of Bundler
+Install the latest version of Bundler:
 ```
 gem install bundler
 ```
-Use bundler to install the rest of the dependencies
+Use bundler to install the rest of the dependencies:
 ```
 bundle install
 ```
-Set up the Database
+Set up the database:
 ```
 rails db:create
 rails db:migrate
 ```
-Start the server
+Start the server:
 ```
 rails s
 ```
@@ -53,14 +53,26 @@ All user requests are made in the JSON format:
 }
 ```
 * User registration:
-POST to `<hostname>/users/`
-* User login
-POST to `/users/sign_in`
+```
+POST to <hostname>/users/
+```
+
+* User login:
+```
+POST to `<hostname>/users/sign_in
+```
+
 ## Habit endpoints
-* Fetch all habits (for the specified user)
-GET to `<hostname>/users/:user_id/habits`
-* Fetch a single habit
-GET to `<hostname>/users/:user_id/habits/:habit_id`
+* Fetch all habits (for the specified user):
+```
+GET to <hostname>/users/:user_id/habits
+```
+
+* Fetch a single habit:
+```
+GET to <hostname>/users/:user_id/habits/:habit_id
+```
+
 Create and Edit Habit requests should be made in the format:
 ```
 {"habit":
@@ -80,10 +92,16 @@ Create and Edit Habit requests should be made in the format:
   }
 }
 ```
-* Create Habits
-POST to `<hostname>/users/:user_id/habits`
-* Edit Habit
-PATCH to `<hostname>/users/:user_id/habits/:habit_id`
-* Remove Habit
-DELETE to `<hostname>/users/:user_id/habits/:habit_id`
+* Create Habit:
+```
+POST to <hostname>/users/:user_id/habits
+```
+* Edit Habit:
+```
+PATCH to <hostname>/users/:user_id/habits/:habit_id
+````
+* Remove Habit:
+```
+DELETE to <hostname>/users/:user_id/habits/:habit_id
+```
 # habitar-backend
