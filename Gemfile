@@ -46,6 +46,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise-jwt' , '~>0.5.6'
-gem 'dotenv-rails', :require => 'dotenv/rails-now'
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'twilio-ruby'
 gem 'rufus-scheduler'
