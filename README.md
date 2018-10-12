@@ -45,10 +45,11 @@ rails s
 ### User requests
 All user requests are made in the JSON format:
 ```
-{"user":{
-		"email":"<username>",
-		"password":"<password>"
-	}
+{
+  "user":{
+    "email":"<username>",
+    "password":"<password>"
+  }
 }
 ```
 * User registration:
