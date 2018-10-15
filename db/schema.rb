@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_161414) do
+ActiveRecord::Schema.define(version: 2018_10_10_211938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2018_10_10_161414) do
     t.time "reminder_time"
     t.text "phone"
     t.boolean "opt_in"
+    t.boolean "power_streak"
+    t.text "power_reward"
     t.index ["user_id"], name: "index_habits_on_user_id"
   end
 
