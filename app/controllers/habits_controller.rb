@@ -27,7 +27,7 @@ class HabitsController < ApplicationController
     #
     #   TwilioTextMessenger.new(message, phone).call
     #   return message
-    end
+    # end
   end
 
   def update
