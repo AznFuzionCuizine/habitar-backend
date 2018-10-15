@@ -16,18 +16,18 @@ class HabitsController < ApplicationController
     puts habit_params
     habit = Habit.create(habit_params)
     render json: habit
-    #
-    # if habit.opt_in == true && habit.phone != nil
-    #   puts ENV['SID']
-    #   puts ENV['AUTH_TOKEN']
-    #
-    #   message = "Hello from Habitar! You opted in for reminders for your habit. Don't forget to help #{habit.child} with #{habit.habit_name} at #{habit.reminder_time.strftime('%l:%M %p')}."
-    #
-    #   phone = "+1#{habit.phone}"
-    #
-    #   TwilioTextMessenger.new(message, phone).call
-    #   return message
-    # end
+    
+    if habit.opt_in == true && habit.phone != nil
+      puts ENV['SID']
+      puts ENV['AUTH_TOKEN']
+
+      message = "Hello from Habitar! You opted in for reminders for your habit. Don't forget to help #{habit.child} with #{habit.habit_name} at #{habit.reminder_time.strftime('%l:%M %p')}."
+
+      phone = "+1#{habit.phone}"
+
+      TwilioTextMessenger.new(message, phone).call
+      return message
+    end
   end
 
   def update
